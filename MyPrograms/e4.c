@@ -1,8 +1,7 @@
 #include <msp430.h>
-#include <stdio.h>
+
 #include <libemb/serial/serial.h>
 #include <libemb/conio/conio.h>
-void rgb(int *);
 void spigot(int[], int *);
 void totals(int[], int *, int *);
 
@@ -103,10 +102,6 @@ int main(void) {
     _BIS_SR(GIE | LPM1_bits);
 }
 //Put this in just to try for calling the colors, no luck yet
-void rgb(int *i) {
-  P2DIR |= output[*i];
-  __delay_cycles(10000);
-}
 void spigot(int answer[], int *places){
   answer[0] =2;
   int size = 5;
